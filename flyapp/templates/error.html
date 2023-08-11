@@ -1,0 +1,36 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infly | Error</title>
+    <link rel="stylesheet" href="{%static 'styles/after_payment.css '%}">
+</head>
+<body>
+    <header class="main-header container">
+        <div class="h-c flex">
+            <div class="h-img flex">
+                <img src="{%static '/images/png/02 1.png'%}" alt="">
+                <h1>CHECKOUT</h1>
+            </div>
+            <div class="cb">
+                <p><a href="{%url 'home' %}">Continue Browsing</a></p>
+            </div>
+            <div class="c-menu" id="m-menu">
+                <svg width="20" height="15" viewBox="0 0  20 15" preserveAspectRatio="xMidYMid meet"><line x1="0" y1="0.5" x2="20" y2="0.5" style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line><line x1="0" y1="7.5" x2="20" y2="7.5" style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line><line x1="0" y1="14.5" x2="20" y2="14.5" style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line></svg>
+            </div>
+        </div>
+    </header>
+    <div class="main container">
+        <div class="animation">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+            <lottie-player src="https://lottie.host/f1a988e3-28e2-4695-a0ad-a61dafcba584/Jv4EUNPhrI.json" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></lottie-player>
+        </div>
+        <div class="thanks">
+            <span>Your order was failed</span>
+        </div>
+    </div>
+</body>
+</html>

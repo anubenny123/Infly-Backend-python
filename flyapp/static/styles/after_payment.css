@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800&display=swap');
+*{
+    margin: 0%;
+    font-family: 'Jost', sans-serif;
+    box-sizing: border-box;
+}
+.main{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 100vh;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+.thanks{
+    font-size: 3rem;
+}
+.thanks span{
+    font-weight: 500;
+    color: rgba(0, 0, 0, .8);
+}
+.thanks p{
+    font-size: 1rem;
+    text-indent: 5%;
+}
+.flex{
+    display: flex;
+}
+.container{
+    padding: 1rem 9rem;
+}
+.main-header{
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    z-index: 99999;
+    position: relative;
+}
+.h-c{
+    justify-content: space-between;
+    align-items: center;
+}
+.h-img img{
+    height: 5rem;
+    width: 10rem;
+}
+.h-img{
+    align-items: center;
+}
+.h-img h1{
+    font-size: .9rem;
+}
+.cb p a{
+font-size: .89rem;
+color: rgba(0, 0, 0, 1);
+font-weight: normal;
+}
+.c-menu{
+    padding: .5rem;
+    display: none;
+}
+@media all and (width<1030px) {
+    .container{
+        padding: 1rem 5rem;
+    }
+}
+@media all and (width<855px) {
+    .main{
+        flex-direction: column;
+    }
+    .container{
+        padding: 1rem 2rem;
+    }
+    .thanks span{
+        font-size: 1.7rem;
+    }
+    .thanks{
+        text-align: center;
+    }
+}
+@media all and (width<745px) {
+    .main{
+        flex-direction: column;
+        height: calc(100vh - 6.875rem);
+    }
+    .thanks{
+        text-align: center;
+    }
+    .cb{
+        display: none !important;
+    }
+}
+@media all and (width<600px) {
+    .h-img img{
+        height: 4rem;
+        width: 8rem;
+    }
+    .thanks span{
+        font-size: 1.8rem;
+    }
+    .thanks p{
+        text-indent: initial;
+    }
+    .thanks{
+        width: 100%;
+    }
+}
+@media all and (width<465px) {
+    .container{
+        padding: 1rem .5rem;
+    }
+}
+@media all and (width<400px) {
+    .thanks span{
+        font-size: 1.2rem;
+    }
+}
+@media all and (width<335px) {
+    .thanks span{
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,312 @@
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'styles/checkout.css'%}">
+    <script src="{%static 'js/index.var.js'%}"></script>
+    <link rel="stylesheet" href="{%static 'styles/style.css'%}"></link>
+    <title>Checkout | Infly</title>
+</head>
+<body>
+<header class="main-header container">
+    <div class="h-c flex">
+        <div class="h-img flex">
+            <img src="{%static 'images/png/02 1.png'%}" alt="">
+            <h1>CHECKOUT</h1>
+        </div>
+        <div class="cb">
+            <p><a href="{%url 'home' %}">Continue Browsing</a></p>
+        </div>
+        <div class="c-menu" id="m-menu">
+            <svg width="20" height="15" viewBox="0 0  20 15" preserveAspectRatio="xMidYMid meet">
+                <line x1="0" y1="0.5" x2="20" y2="0.5"
+                      style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line>
+                <line x1="0" y1="7.5" x2="20" y2="7.5"
+                      style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line>
+                <line x1="0" y1="14.5" x2="20" y2="14.5"
+                      style="stroke: rgb(36, 36, 36); fill: none; stroke-width: 1px;"></line>
+            </svg>
+        </div>
+    </div>
+</header>
+<section class="m-s container">
+    <div class="mn-div" id="mn-bx">
+        <ul>
+            <li><a href="../index.html">Continue Browsing</a></li>
+            <li><a href="#">Edit Cart</a></li>
+        </ul>
+    </div>
+    <div class="main-d flex">
+        <div class="left-d">
+            <div class="pay1 flex">
+                <div class="p-h"><h1><span>1</span> &nbsp;Payment</h1></div>
+                <div class="editlink"><a href="#">Edit</a></div>
+            </div>
+            <div class="aftercntnu-details" id="billing-addr">
+                <div class="rzpay flex">
+                    <div class="rzpimg">
+                        <img src="https://wixmp-6613fa290e8c1ac70a0297b6.wixmp.com/payment-methods/checkout/svg/razorpay.svg?v2023-05-26"
+                             alt="rzp-image" height="50px" width="100px">
+                    </div>
+                    <div class="rzptxt">
+                        <span>Paying with Razorpay</span>
+                    </div>
+                </div>
+                <div class="bill-details">
+                    <div class="bill-name" id="bill-name"><span>test name</span></div>
+                    <div class="bill-mail" id="mail-id"><span>test@example.com</span></div>
+                    <div class="bill-address" id="address">kdlr tcr kerala</div>
+                    <div class="bill-phone" id="phone-no">0000000000</div>
+                </div>
+            </div>
+
+            <div class="rzp-bx" id="rzp-box">
+                <div class="rzp-1">
+                    <span><span>Pay with</span><span>&nbsp;</span><span>Razorpay</span></span>
+                </div>
+                <div class="rzp-2">
+                    <div class="rzp-3">
+                        <div>Once you click to proceed, you will be redirected to Razorpay</div>
+                    </div>
+                    <div class="rzp-4">
+                        <img src="data:image/svg+xml,%3csvg width='124' height='42' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M57.5.5V20h-1V9h-55v31.5h55V27h1v14.5H.5V.5h57zm66 0v41h-57V27h1v13.5h55V9h-55v11h-1V.5h57zM73.354 15.646L80.707 23l-7.353 7.354-.708-.708 6.146-6.147L48 23.5v-1h30.792l-6.146-6.146.708-.708zM56.5 1.5h-55V8h55V1.5zm66 0h-55V8h55V1.5zm-117 3a1 1 0 110 2 1 1 0 010-2zm4 0a1 1 0 110 2 1 1 0 010-2zM71 4a1 1 0 110 2 1 1 0 010-2zm4 0a1 1 0 110 2 1 1 0 010-2z' fill='%23646464' fill-rule='evenodd' opacity='.6'/%3e%3c/svg%3e"
+                             alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="b-a" id="bill-form">
+                <div class="b-h">
+                    <h3>Billing address</h3>
+                </div>
+                <form action="" class="billform"  name="myform">
+                    <div class="b-ac">
+                        <div class="odr-cnf">
+                            <p>*Email for order confirmation</p>
+                        </div>
+                        <div class="emlinpt">
+                            <input type="email" class="inbx" id="emid"><br>
+                            <span class="v-msg"></span>
+                        </div>
+                    </div>
+                    <div class="f-nm">
+                        <div class="f-h">
+                            <p>*First name</p>
+                        </div>
+                        <div class="f-inpt">
+                            <input type="text" class="inbx" id="fnid">
+                            <span class="v-msg"></span>
+                        </div>
+                    </div>
+                    <div class="l-nm">
+                        <div class="l-h">
+                            <p>*Last name</p>
+                        </div>
+                        <div class="l-inpt">
+                            <input type="text" class="inbx" id="lnid">
+                            <span class="v-msg"></span>
+                        </div>
+                    </div>
+                    <div class="addr">
+                        <div class="a-h">
+                            <p>*Address</p>
+                        </div>
+                        <div class="addrinpt">
+                            <input type="text" class="inbx" id="addid">
+                            <span class="v-msg"></span>
+                        </div>
+                    </div>
+                    <div class="cty">
+                        <div class="c-h">
+                            <p>*City</p>
+                        </div>
+                        <div class="ctyinpt">
+                            <input type="text" class="inbx" id="cityid">
+                            <span class="v-msg"></span>
+                        </div>
+                    </div>
+                    <div class="contry-region flex">
+                        <div class="cntry-reg">
+                            <div class="cntry">
+                                <p>*Country</p>
+                                <input type="text" class="inbx" id="cntryid">
+                                <span class="v-msg"></span>
+                            </div>
+                            <div class="cntry">
+                                <p>*Zip/Postal</p>
+                                <input type="number" class="inbx" id="zipid">
+                                <span class="v-msg"></span>
+                            </div>
+                        </div>
+                        <div class="cntry-reg">
+                            <div class="cntry">
+                                <p>*Region</p>
+                                <input type="text" class="inbx" id="reid">
+                                <span class="v-msg"></span>
+                            </div>
+                            <div class="cntry">
+                                <p>*Phone</p>
+                                <input type="number" class="inbx" id="pid" maxlength="10" required >
+                                <span class="v-msg"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-btn">
+                        <button type="button" onclick="myFunction()" class="cn-btn" id="cntbtn">Continue</button>
+                    </div>
+                </form>
+            </div>
+            <div class="review">
+                <div class="review2" id="rev-div">
+                    <h1><span>2</span> &nbsp;Review and place order</h1>
+                </div>
+                <div class="aftr-cntnu-open" id="rev-div-content">
+                    <div class="checkdetails">
+                        <p>Review the order details above, and place your order when you’re ready.</p>
+                    </div>
+                    <div class="p-order">
+                          <button type="button"  onclick="checkout(`{{product.id}}`)" >Place Order</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-d">
+            <div class="ordersum">
+                <div class="ordersum-c1">
+                    <div class="ordersum-h flex">
+                        <div class="m-h">
+                            <h2>Order summary (<span>1</span>)</h2>
+                        </div>
+                        <div class="edtcrt" id="editcart">
+                            <span><a href="#">Edit</a></span>
+                        </div>
+                    </div>
+                    <div class="cartitems flex">
+                        <div class="orderitem flex">
+                            <div class="itemimg"><img src="{%static 'images/png/item.png'%}" alt="" width="60px"></div>
+                            <div class="itemdetails">
+                                <span>{{product.product_name}}</span><br>
+                                <span>Qty: 1</span>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            <span><span>&#8377</span>{{product.price}}</span>
+                        </div>
+                    </div>
+                    <div class="promocode">
+                        <div class="promo-v flex" id="promoopen" onclick="showPromo()">
+                            <div class="promosvg">
+                                <svg viewBox="0 0 14 16" fill="currentColor" width="1em" height="1em">
+                                    <g transform="rotate(30 7.442 12.846)" fill="currentColor" fill-rule="evenodd">
+                                        <path d="M1 14.005C1 14 9.005 14 9.005 14 9 14 9 5.414 9 5.414l-4-4-4 4v8.59zM0 5l5-5 5 5v9.005c0 .55-.456.995-.995.995H.995C.445 15 0 14.544 0 14.005V5z"
+                                              fill-rule="nonzero"></path>
+                                        <circle cx="5" cy="5" r="1"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="promo-text"><span><u> Enter a promo code</u></span></div>
+                        </div>
+                        <div class="promo-h" id="hiddenpromobox">
+                            <div class="promoinpt">
+                                <input type="text" class="prmo-input" id="promoinpt"
+                                       onchange="handlePromoInputChange()">
+                            </div>
+                            <div class="promo-apply">
+                                <button onclick="ApplyPromoCode('{{product.id}}')" id="promoapply" class="promoapply">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prices flex">
+                        <div class="miscprice flex">
+                            <span>Subtotal</span>
+                            <span>Disscount</span>
+                        </div>
+                        <div class="miscprice-count flex">
+                            <span>&#8377 {{product.price}}</span>
+                            <span id="discount">&#8377 0.00</span>
+                        </div>
+                    </div>
+                    <div class="total-price">
+                        <span>Total</span>
+                        <span id="discount-total">&#8377 {{product.price}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="secure-chk">
+                <svg viewBox="0 0 11 14" fill="currentColor" width="1em" height="1em">
+                    <g fill="currentColor" fill-rule="evenodd">
+                        <path d="M0 12.79c0 .558.445 1.01.996 1.01h9.008A1 1 0 0011 12.79V6.01c0-.558-.445-1.01-.996-1.01H.996A1 1 0 000 6.01v6.78z"></path>
+                        <path d="M9.5 5v-.924C9.5 2.086 7.696.5 5.5.5c-2.196 0-4 1.586-4 3.576V5h1v-.924c0-1.407 1.33-2.576 3-2.576s3 1.17 3 2.576V5h1z"
+                              fill-rule="nonzero"></path>
+                    </g>
+                </svg>
+                <span>Secure Checkout</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<form method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
+{% csrf_token %}
+  <input type="hidden" id= 'k_id' name="key_id" value="rzp_test_6S7AT9GQ6otVUl"/>
+  <input type="hidden" id="amount_id" name="amount" value=1001/>
+  <input type="hidden" id="or_id" name="order_id" value="razorpay_order_id"/>
+  <input type="hidden" id="Name_id" name="name" value="Acme Corp"/>
+  <input type="hidden" id="desc_id" name="description" value="A Wild Sheep Chase"/>
+  <input type="hidden" id="img_id" name="image" value="https://cdn.razorpay.com/logos/BUVwvgaqVByGp2_large.jpg"/>
+  <input type="hidden" id="prefill_id" name="prefill[name]" value="Gaurav Kumar"/>
+  <input type="hidden" id="contact_id" name="prefill[contact]" value="9123456780"/>
+  <input type="hidden" id="mail_id" name="prefill[email]" value="gaurav.kumar@example.com"/>
+  <input type="hidden" id="address_id"  name="notes[shipping address]" value="L-16, The Business Centre, 61 Wellfield Road, New Delhi - 110001"/>
+  <input type="hidden" name="callback_url" value="http://localhost:8000/payment-callback/"/>
+    <input type="hidden" name="cancel_url" value="http://localhost:8000/payment/error/"/>
+  <button style="display: none;" id="razor_pay">Pay</button>
+</form>
+
+
+<script src="{%static 'js/checkout.js' %}"></script>
+<script>
+    // productID = `{{product.id}}`
+
+       function getCookie(name) {
+           var cookieValue = null;
+           if (document.cookie && document.cookie !== '') {
+               var cookies = document.cookie.split(';');
+               for (var i = 0; i < cookies.length; i++) {
+                   var cookie = cookies[i].trim();
+                   if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                       cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                       break;
+                   }
+               }
+           }
+           return cookieValue;
+       }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

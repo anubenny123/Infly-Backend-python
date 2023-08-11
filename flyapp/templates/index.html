@@ -1,0 +1,393 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block body %}
+<section class="top-section container">
+    <div class="mobilediv" id="mbdiv">
+        <div class="mobilelistcontent">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#productssec">Products</a></li>
+                <li><a href="#abt">About</a></li>
+                <li><a href="#c-s">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sec1full">
+        <div class="sptimg">
+            <img class="imgover" src="{%static 'images/png/spotIllustration_01 1.png'%}" alt="">
+        </div>
+        <div class="contents1">
+            <div class="textside">
+                <h1>Become an <br><span class="influencer">INFLUENCER</span>
+                    <p>{{full.product_name}}</p>
+
+                    <a href="{% if full %}{%url 'checkout' full.id %} {% else %}#{% endif %}">
+
+                        <button id="offerbtn" class="offerbtn"><i>Buy
+                            all @<span>&#8377</span>{{full.price}}/-</i></button>
+                    </a>
+                </h1>
+            </div>
+        </div>
+        <img class="bigvector" src="{%static 'images/png/Vector 5.png'%}" alt="">
+    </div>
+    <div class="sec2 flex-box">
+        <div class="box1 incheight">
+            <div class="boxhead flex-box">
+                <p>Digital influence</p>
+                <img src="{%static 'images/png/up-right-arrow.png'%}" alt="">
+            </div>
+            <div class="box-contents1 test">
+                <img src="{%static 'images/png/categories-1 1.png'%}" alt="">
+            </div>
+        </div>
+        <div class="box2 incheight">
+            <div class="boxhead flex-box">
+                <p>Course</p>
+                <img src="{%static 'images/png/up-right-arrow.png'%}" alt="">
+            </div>
+            <div class="box-contents2 test">
+                <img src="{%static 'images/png/categories-2 1.png'%}" alt="">
+            </div>
+        </div>
+        <div class="box3 incheight">
+            <div class="boxhead flex-box">
+                <p>Softwares</p>
+                <img src="{%static 'images/png/up-right-arrow.png'%}" alt="">
+            </div>
+            <div class="box-contents3 test">
+                <img src="{%static 'images/png/categories-3 1.png'%}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="arrow">
+        <img src="{%static 'images/png/down-arrow.png'%}" alt="">
+    </div>
+</section>
+
+<section class="sec3full" id="main">
+    <div class="sec2main">
+        <div class="sec2heading" id="productssec">
+            <h2>Explore Digital Collection </h2>
+        </div>
+        <div class="items flex-box">
+            {%for product in featured %}
+
+            <div id="item{{product.id}}" class="item1" onclick="openDetails('{{product.id}}')">
+                <img src="{{product.image.url}}" alt="" class="itempic">
+                <img src="{% static 'images/png/download.png' %}" alt="" id="download">
+
+                <div class="itemdetails">
+                    <p>{{product.product_name}}</p>
+                    <span><span>&#8377</span>{{product.price}}</span>
+                </div>
+            </div>
+            <div class="purchase-details" id="hiddenbox{{product.id}}">
+                <a href="javascript:void(0);" class="closebtn" onclick="closeNav('{{product.id}}')">&times;</a>
+                <div class="smallcontainer">
+                    <div class="inboximg">
+                        <img src="{{product.image.url}}" alt="">
+                    </div>
+                    <div class="smallimg1">
+                        <div class="smallimg">
+                             {%for image in product.images_set.all %}
+                            <img src="{{image.image.url}}" alt="">
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="prdctdetails">
+                        <p class="inboxhead">{{product.product_name}}</p>
+                        <span><span>&#8377</span>{{product.price}}</span>
+                    </div>
+                    <a href="{% url 'checkout' product.id %}">
+                        <button class="buynow">Buy Now</button>
+                    </a>
+                    <div class="description">
+                        <h3>Description</h3>
+                        <p>
+                            {{product.desc|safe}}
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="btn explorebtn">
+            <a href="{% url 'product' category_name='all' %}">
+                <button>
+                    Explore More
+                </button>
+            </a>
+        </div>
+        <!--            <div class="">-->
+        <!--                <h1>Hear From Our Satisfied Coustomers</h1>-->
+        <!--            </div>-->
+        <div id="popup" class="shareyourexp">
+            <div class="expcontent">
+                <h3>Share Your Experience</h3>
+                <form action="" id="reviewForm">
+
+                    <div class="star-rating">
+                        <label>
+                            <input type="radio" name="stars" value="1" required/>
+                            <span class="icon">★</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="stars" value="2" required/>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="stars" value="3" required/>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="stars" value="4" required/>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="stars" value="5" required/>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                            <span class="icon">★</span>
+                        </label>
+                    </div>
+                    <p>Name</p>
+                    <input type="name" required>
+                    <p>Email</p>
+                    <input type="Email" required>
+                    <p>Do you have any thoughts you'd like to share?</p>
+                    <textarea required name="" id="" cols="30" rows="10"></textarea>
+                    <div class="expbuttons flex-box">
+                        <button type="button" onclick="closeExp()">Cancel</button>
+                        <button id="postButton">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="cstmrfeedback flex-box container">
+            <div class="sharefeedback">
+                <h4 id="feedbackbtn">Share your Feedback</h4>
+            </div>
+            <div class="owl-carousel owl-theme">
+                {% for re in reviews %}
+                <div class="hai">
+                    <div class="cstmrs2">
+                        <div class="rating rate">
+                            {% for i in re.ratings %}
+                            <img src="{% static 'images/png/Vector (1).png' %}" alt="">
+                            {%endfor%}
+                        </div>
+                        <div class="feedback">
+                            <p class="feedp">{{re.mssg}}"</p>
+                            <p>{{re.name}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="shopnow">
+        </div>
+        <div class="aboutus" id="abt">
+            <div class="aboutcontent">
+                <h3>About Us</h3>
+                <p>A brand & digital products agency for ambitious businesses and life.</p>
+                <p>Crafting engaging content for social media can be a daunting task, but don't worry, we're here to
+                    help. Our team has been working hard to produce eye-catching infographics that are already formatted
+                    and ready for you to post on your social media channels. With our content at your fingertips, you'll
+                    have more time to focus on growing your business and less time worrying about what to post next.
+                    At our core, we're dedicated to creating products that are not only of the highest quality, but also
+                    sustainable. That's why we're excited to announce the launch of our online store, where you can find
+                    a wide range of environmentally conscious products. We're thrilled that you've found us and we hope
+                    that you'll love our products just as much as we do.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="mobilerate">
+    <div class="exprate">
+        <h3>Share Your Experience with us</h3>
+        <a href="javascript:void(0)" id="rate">Rate</a>
+    </div>
+</div>
+<div class="mobilebox">
+    <div class="newsletter">
+        <div class="newshead">
+            <h1 class="newsh1">Stay in the Loop with Our New Arrivals and Unbeatble Offers</h1>
+        </div>
+        <div class="details">
+            <div class="emailinput">
+                <input type="email" name="" id="subscribeid" placeholder="Enter your email here">
+            </div>
+            <div class="subscribe">
+                <button onclick="saveSubs()">Subscribe Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+let notifier = new AWN();
+var radioButtons = document.querySelectorAll('input[name="stars"]');
+
+
+function saveReview(event) {
+        event.preventDefault();
+
+        // Get form values
+        const name = document.querySelector('input[type="name"]').value;
+        const email = document.querySelector('input[type="Email"]').value;
+        const thoughts = document.querySelector('textarea').value;
+        const selectedValue = document.querySelector('input[name="stars"]:checked').value;
+
+        // Create an object with the form data
+        const formData = {
+            name: name,
+            email: email,
+            mssg: thoughts,
+            rating: selectedValue
+        };
+        console.log(formData)
+
+
+        // Make an API request
+        fetch("{%url 'review'%}", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken'), // Retrieve the CSRF token from cookies
+
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response from the server
+                console.log('Response:', data);
+                // Perform any necessary actions or show a success message
+                closeExp()
+                notifier.success("Review Saved", {durations: {success: 1000}})
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                      // Handle errors or show an error message
+            });
+
+        // Reset the form
+        document.querySelector('form').reset();
+
+
+
+
+    }
+
+    document.querySelector('form').addEventListener('submit', saveReview);
+
+
+
+
+
+
+
+function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    function displayPopup(message) {
+        var popup = document.getElementById('popup');
+        popup.innerText = message;
+        popup.style.display = 'block';
+
+        // Hide the popup after a certain duration (e.g., 3 seconds)
+        setTimeout(function () {
+            popup.style.display = 'none';
+        }, 3000);
+    }
+
+
+
+
+function saveSubs() {
+const email = document.getElementById('subscribeid').value;
+if(email) {
+ fetch("{%url 'email' %}", {
+  method: 'POST',
+  headers: {
+    'X-CSRFToken': getCookie('csrftoken'),
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ email}) // Include the email value in the request body
+})
+  .then(response => response.json())
+  .then(data => {
+    // Handle the response from the server
+    console.log('Response:', data);
+    document.getElementById('subscribeid').value = "";
+    notifier.success(data.msg, {durations: {success: 1000}})
+    // Perform any necessary actions or show a success message
+
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    // Handle errors or show an error message
+  });}
+  else {
+
+  notifier.alert("mail id requried")
+  }
+
+}
+
+const starInputs = document.querySelectorAll('.star-rating input[type="radio"]');
+const starLabels = document.querySelectorAll('.star-rating label');
+
+starInputs.forEach((input) => {
+  input.addEventListener('change', handleRatingChange);
+});
+
+function handleRatingChange(event) {
+  const selectedRating = event.target.value;
+  console.log('Selected rating:', selectedRating);
+
+  // Perform actions with the selected rating
+  // Example: Send the rating to the server, update UI, etc.
+
+  // Update CSS class to highlight selected stars
+  starLabels.forEach((label) => {
+    if (label.htmlFor === event.target.id) {
+      label.classList.add('selected');
+    } else {
+      label.classList.remove('selected');
+    }
+  });
+}
+
+
+
+
+</script>
+
+{% endblock%}
+
+

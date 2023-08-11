@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&display=swap');
+@font-face {
+    font-family: 'Avenir Next';
+    src: url(../fonts/AvenirNextLTPro-It.otf);
+    src: url(../fonts/AvenirNextLTPro-Regular.otf);
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Roboto',sans-serif;
+    font-weight: lighter;
+}
+.container{
+    padding: 1rem 12rem;
+}
+.flex{
+    display: flex;
+}
+.main-header{
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+.main-d{
+    justify-content: center;
+}
+.pay1{
+    height: 3.5rem;
+    font-size: 1.1rem;
+    justify-content: space-between;
+}
+.pay1 h1{
+    font-weight: 400;
+}
+.pay1 span,.review2 span{
+    font-weight: 400;
+}
+.h-img{
+    align-items: center;
+}
+.left-d{
+    padding: 1rem;
+}
+.gift-rd{
+    position: relative;
+    padding: 1rem 0rem;
+    box-sizing: border-box;
+}
+.h-img img{
+    height: 5rem;
+    width: 10rem;
+}
+.h-img h1{
+    font-weight: bold;
+    margin-left: .5rem;
+    color: #888;
+    line-height: 2.5;
+    display: grid;
+    place-items: center;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    font-family: 'Avenir Next';
+}
+.h-c{
+    justify-content: space-between;
+    align-items: center;
+}
+.cb p a{
+    font-size: .89rem;
+    color: rgba(0, 0, 0, 1);
+    font-weight: normal;
+}
+.chkbx{
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+}
+.gftcode.height{
+    height: 3.625rem;
+}
+.gftcode.height .gftinput{
+    border: 2px solid #3457D5;
+}
+.chknl{
+    align-items: center;
+}
+.gftcode{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0px;
+    height: 0;
+    transition: .3s !important;
+    overflow: hidden;
+    place-items: center;
+}
+.gftcode input{
+    padding: .5rem .75rem;
+    width: 21rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: fit-content;
+    outline: none;
+}
+.gftcode input::placeholder{
+    font-size: 1rem;
+}
+.gftcode button{
+    height: fit-content;
+    padding: .8rem 2.8rem;
+    background-color: lightgray;
+    border: 0;
+    color: white;
+    transition: .2s;
+}
+.appbtn.button-hover{
+    background-color: gray !important;
+}
+.rzp-bx{
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 2rem 0rem;
+}
+.rzp-1{
+    padding: 1rem 1rem 0rem 1rem;
+    margin-bottom: 1rem;
+    font-weight: bolder;
+}
+.rzp-1 span{
+    font-weight: 500;
+    opacity: .7;
+}
+.rzp-2{
+    padding: 1rem;
+}
+.rzp-3{
+    margin-bottom: 30px;
+    opacity: .7;
+}
+.b-h{
+    height: 10vh;
+}
+.b-h h3{
+    color: black;
+    font-weight: 400;
+    margin-top: .5rem;
+}
+.b-ac,.f-nm,.l-nm,.addr,.cty{
+    line-height: 2;
+    margin-bottom: 1rem;
+}
+.odr-cnf,.f-h,.l-h,.a-h,.c-h{
+    margin-bottom: .4rem;
+}
+.emlinpt input,.f-inpt input,.l-inpt input,.addrinpt input,.ctyinpt input{
+    /* width: 35vw; */
+    width: 100%;
+    height: 3rem;
+    padding: 0rem .5rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.cntry,.cntry p{
+    margin-bottom: .9rem;
+}
+
+.cntry input{
+    width: 15rem;
+    box-sizing: border-box;
+    height: 3rem;
+    padding: 0rem .5rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+.contry-region{
+    gap: 2rem;
+    justify-content: space-between;
+}
+.cn-btn,.p-order button,.promoapply{
+    padding: .9rem 3rem;
+    width: 100%;
+    background-color: #242424;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: .2rem;
+    transition: .1s;
+}
+.cn-btn:hover,.p-order button:hover{
+    background-color: rgba(0, 0, 0, .8);
+}
+.c-btn{
+    margin: 1rem 0rem 1rem 0rem;
+}
+.review{
+    margin: 5rem 0px;
+    margin-bottom: 0;
+}
+.review .review2{
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, .4);
+}
+.review2.active{
+    color: rgba(0, 0, 0, .8);
+}
+.aftr-cntnu-open{
+    display: none;
+}
+.aftr-cntnu-open.active{
+    display: block;
+}
+.review2 h1{
+    font-weight: 400;
+}
+.v-msg{
+    color: red;
+    display: block;
+    line-height: 2;
+}
+        /* After payment billing details div Start*/
+.rzpay{
+    align-items: center;
+}
+.rzpay .rzptxt{
+    margin-left: .7rem;
+}
+.rzptxt span{
+    font-weight: 400;
+    opacity: .6;
+}
+.editlink a{
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 1);
+    font-weight: normal;
+}
+.editlink{
+    display: none;
+}
+.bill-details{
+    line-height: 1.4;
+    font-size: 1rem;
+    padding: .5rem 0rem 2rem 0rem;
+    border-bottom: 1px solid grey;
+    opacity: .6;
+}
+.bill-details *{
+    font-weight: 400;
+}
+.aftercntnu-details{
+    display: none;
+}
+
+        /* After payment billing details div  End */
+
+.checkdetails{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.orderitem{
+    max-width: 13rem;
+}
+.itemdetails{
+    padding-left: 1rem;
+}
+.orderitem span{
+    font-size: .8rem;
+    font-weight: 500;
+}
+.cartitems{
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.5rem 0rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+.right-d{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+    overflow-y: auto;
+    top: 0px;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    max-width: 30rem;
+}
+.ordersum-h{
+    font-size: .8rem;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+}
+.edtcrt{
+    display: none;
+}
+.edtcrt.visible{
+    display: block;
+}
+.ordersum-h span a{
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, .8);
+    font-weight: 400;
+}
+.ordersum-h h2{
+    font-weight: 400;
+}
+.ordersum{
+    background: #f4f4f4;
+    padding: 2rem 2rem 1rem 2rem;
+}
+.item-price{
+    font-size: .9rem;
+}
+.item-price span{
+    align-items: center;
+    font-weight: 400;
+}
+.promo-v .promo-text{
+    margin-left: .5rem;
+}
+.promo-v{
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+.promo-text u{
+    color: rgba(0, 0, 0, .8);
+    font-weight: 400;
+}
+.prmo-input{
+    padding: .5rem .75rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: fit-content;
+}
+.promoapply{
+    padding: .7rem 3rem !important;
+}
+.promo-h{
+    height: 0rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+    transition: .4s;
+    margin-top: 1rem;
+}
+.prmo-input{
+    outline: none;
+}
+.promocode{
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    padding-bottom: .9rem;
+}
+.promoapply{
+    height: fit-content;
+    padding: .8rem 2.8rem;
+    background-color: lightgray;
+    border: 0;
+    color: white;
+    transition: .2s;
+}
+.promoapply.button-hover{
+    background: gray !important;
+}
+.promo-h.height{
+    height: calc(6.375rem - .2rem);
+}
+.promo-h.height .prmo-input{
+    border: 2px solid #3457D5;
+}
+.prices{
+    justify-content: space-between;
+    padding: 1rem 0rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    box-sizing: border-box;
+}
+.miscprice,.miscprice-count{
+    flex-direction: column;
+}
+.miscprice-count{
+    align-items: flex-end;
+}
+.prices span{
+    font-size: 14.4px;
+    font-weight: 400;
+    padding-top: .5rem;
+    box-sizing: border-box;
+}
+.total-price{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0rem;
+}
+.total-price span{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.secure-chk{
+    display: flex;
+    justify-content: center;
+    margin: .5rem 0rem;
+    font-size: .9rem;
+    gap: .5rem;
+}
+.secure-chk span{
+    font-weight: 400;
+}
+.c-menu{
+    padding: .5rem;
+    display: none;
+}
+.mn-div ul{
+    list-style: none;
+    width: 100vw;
+    box-sizing: border-box;
+}
+.mn-div ul li a{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    font-size: 1.2rem;
+    color: #242424;
+    background-color: white;
+    display: block;
+}
+.mn-div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 99;
+}
+.mn-div.visible{
+    display: block;
+}
+.m-s{
+    position: relative;
+}
+
+        /* Responsive design starts here */
+
+@media all and (width<1290px) {
+    .container{
+        padding: 1rem 9rem;
+    }
+}
+@media all and (width<1175px) {
+    .container{
+        padding: 1rem 5rem;
+    }
+}
+@media all and (width<1080px) {
+    .container{
+        padding: 1rem 2rem;
+    }
+}
+@media all and (width<960px) {
+    .container{
+        padding: 1rem 1rem;
+    }
+}
+@media all and (width<930px) {
+    .main-d{
+        display: block;
+    }
+    .gftcode{
+        justify-content: inherit;
+        gap: 1rem;
+    }
+    .emlinpt input,.f-inpt input,.l-inpt input,.addrinpt input,.ctyinpt input{
+        width: 100%;
+    }
+    .contry-region{
+        justify-content: inherit;
+    }
+    .b-a{
+        display: grid;
+        justify-content: center;
+    }
+    .right-d{
+        margin: 0;
+        margin: auto;
+    }
+    .cb{
+        display: none;
+    }
+    .c-menu{
+        display: block;
+    }
+    .h-img img{
+        height: 2.5rem;
+        width: 5rem;
+    }
+    .h-img h1{
+        font-size: .9rem;
+    }
+    .gftcode{
+        flex-direction: column;
+    }
+    .gftcode.height{
+        height: 6.375rem;
+    }
+    .gftcode input{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .gftcode button{
+        width: 100%;
+    }
+}
+@media all and (width<565px){
+    .b-a{
+        display: flex;
+        flex-direction: column;
+    }
+    .contry-region{
+        justify-content: space-between;
+    }
+    .cntry input{
+        width: auto;
+    }
+}
+@media all and (width<525px){
+    .contry-region{
+        display: block;
+    }
+    .cntry input{
+        width: 100%;
+        /* height: 2rem; */
+    }
+    .inbx{
+        border: 0;
+        height: 2rem !important;
+        border-bottom: 1px solid black;
+    }
+}
+@media all and (width<370px){
+    .container{
+        padding: .4rem .4rem;
+    }
+    .h-c{
+        padding: 1rem;
+    }
+    .review2{
+        font-size: .9rem !important;
+    }
+}

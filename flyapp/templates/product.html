@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+{%load static %}
+{%block body %}
+<section class="" id="main">
+    <div class="" style="margin-top: 25px; margin-bottom: 25px;">
+        <div class="" id="productssec">
+            <div class="items flex-box">
+                {% for product in products %}
+                <div id="item{{product.id}}" class="item1" onclick="openDetails('{{product.id}}')">
+                    <img src="{{product.image.url}}" alt="" class="itempic">
+                    <img src="{% static 'images/png/download.png' %}" alt="" id="download">
+
+                    <div class="itemdetails">
+                        <p>{{product.product_name}}</p>
+                        <span><span>&#8377</span>{{product.price}}</span>
+                    </div>
+                </div>
+                <div class="purchase-details" id="hiddenbox{{product.id}}">
+                    <a href="javascript:void(0);" class="closebtn" onclick="closeNav('{{product.id}}')">&times;</a>
+                    <div class="smallcontainer">
+                        <div class="inboximg">
+                            <img src="{{product.image.url}}" alt="">
+                        </div>
+                        <div class="smallimg1">
+                            <div class="smallimg">
+                                 {%for image in product.images_set.all %}
+                                <img src="{{image.image.url}}" alt="">
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="prdctdetails">
+                            <p class="inboxhead">{{product.product_name}}</p>
+                            <span><span>&#8377</span>{{product.price}}</span>
+                        </div>
+                        <a href="{% url 'checkout' product.id %}">
+                            <button class="buynow">Buy Now</button>
+                        </a>
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p>
+                                {{product.desc|safe}}
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}
